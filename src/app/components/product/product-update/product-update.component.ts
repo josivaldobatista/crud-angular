@@ -17,7 +17,7 @@ export class ProductUpdateComponent implements OnInit {
 
   // Para preencher os campos quando entrar na tela de update. (OO)
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id')
+    const id = +this.route.snapshot.paramMap.get('id')
     this.productService.readById(id).subscribe(product => {
       this.product = product
     });
